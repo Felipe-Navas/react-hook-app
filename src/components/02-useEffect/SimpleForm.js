@@ -32,7 +32,7 @@ export const SimpleForm = () => {
     <>
       <h1>useEffect</h1>
       <hr />
-      <div className="form-group">
+      <div className="form-group mb-2">
         <input
           type="text"
           name="name"
@@ -43,7 +43,7 @@ export const SimpleForm = () => {
           onChange={handleInputChange}
         />
       </div>
-      <div className="form-group">
+      <div className="form-group mb-2">
         <input
           type="text"
           name="email"
