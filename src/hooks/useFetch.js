@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const useFetch = (url) => {
+  const isMounted = useRef(true);
+
   const [state, setState] = useState({
     data: null,
     loading: true,
@@ -8,21 +10,29 @@ export const useFetch = (url) => {
   });
 
   useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
     setState({ data: null, loading: true, error: null });
 
     fetch(url)
       .then((resp) => resp.json())
       .then((data) => {
-        if (data.length === 0)
-          data.push({
-            author: 'No se encuentra el id',
-            quote: 'No se encuentra el id',
+        if (isMounted.current) {
+          if (data.length === 0)
+            data.push({
+              author: 'No se encuentra el id',
+              quote: 'No se encuentra el id',
+            });
+          setState({
+            loading: false,
+            error: null,
+            data,
           });
-        setState({
-          loading: false,
-          error: null,
-          data,
-        });
+        }
       });
   }, [url]);
 
