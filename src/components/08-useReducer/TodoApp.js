@@ -26,6 +26,22 @@ export const TodoApp = () => {
     localStorage.setItem('Todos', JSON.stringify(todos));
   }, [todos]);
 
+  const handleDelete = (todoId) => {
+    const action = {
+      type: 'delete',
+      payload: todoId,
+    };
+    dispatch(action);
+  };
+
+  const handleToggle = (todoId) => {
+    const action = {
+      type: 'toggle',
+      payload: todoId,
+    };
+    dispatch(action);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -56,16 +72,26 @@ export const TodoApp = () => {
           <ul className="list-group list-group-flush">
             {todos.map((todo, i) => (
               <li key={todo.id} className="list-group-item">
-                <p className="text-center">
+                <p
+                  className={`${todo.done && 'complete'}`}
+                  onClick={() => {
+                    handleToggle(todo.id);
+                  }}
+                >
                   {i + 1}. {todo.desc}
                 </p>
-                <button className="btn btn-danger">Delete</button>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleDelete(todo.id)}
+                >
+                  Delete
+                </button>
               </li>
             ))}
           </ul>
         </div>
         <div className="col-5">
-          <h4>Agregar TODO</h4>
+          <h4>Add TODO</h4>
           <hr />
           <form onSubmit={handleSubmit}>
             <input
@@ -78,8 +104,8 @@ export const TodoApp = () => {
               value={description}
             />
             <div className="d-grid gap-2">
-              <button className="btn btn-outline-success mt-1" type="submit">
-                Agregar
+              <button className="btn btn-success mt-1" type="submit">
+                Add Todo
               </button>
             </div>
           </form>
