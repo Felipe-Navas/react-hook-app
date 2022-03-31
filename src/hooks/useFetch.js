@@ -33,6 +33,13 @@ export const useFetch = (url) => {
             data,
           });
         }
+      })
+      .catch(() => {
+        setState({
+          data: null,
+          loading: false,
+          error: 'No se pudo obtener la informacion',
+        });
       });
   }, [url]);
 
