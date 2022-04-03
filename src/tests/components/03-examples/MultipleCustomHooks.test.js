@@ -2,9 +2,20 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { MultipleCustomHooks } from '../../../components/03-examples/MultipleCustomHooks';
 import { useFetch } from '../../../hooks/useFetch';
+import { useCounter } from '../../../hooks/useCounter';
 jest.mock('../../../hooks/useFetch');
+jest.mock('../../../hooks/useCounter');
 
 describe('Testing over the <MultipleCustomHooks /> component', () => {
+  beforeEach(() => {
+    useCounter.mockReturnValue({
+      counter: 2,
+      increment: () => {},
+      decrement: () => {},
+      reset: () => {},
+    });
+  });
+
   test('should render', () => {
     useFetch.mockReturnValue({ data: null, loading: true, error: null });
 
