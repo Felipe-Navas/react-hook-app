@@ -1,38 +1,64 @@
-# README
+# React Hooks app
 
-This README would normally document whatever steps are necessary to get your application up and running.
+A React app for test the hooks
 
-### What is this repository for?
+## Description
 
-- Quick summary
-  - A React app for test the hooks
-- Version: 1.0
-- [Author](https://www.linkedin.com/in/felipenavaslederhos)
+A React app for test the hooks
 
-### How do I get set up?
+## Demo
 
-- Summary of set up
+You can explore a live version of React Hooks app at the following URL:
 
-  - `yarn`
-  - `npm install`
+https://Felipe-Navas.github.io/react-hook-app
 
-- How to run the app?
+## Getting Started
 
-  - `yarn start`
-  - `npm start`
+### Dependencies
 
-- How to run the tests?
+- `npm`
+- `node`
 
-  - `yarn test`
-  - `npm test`
+### Installing
 
-### Contribution guidelines
+- Clone the repository and install dependencies:
 
-- Writing tests
-- Code review
-- Other guidelines
+```
+git clone https://github.com/Felipe-Navas/react-hook-app.git && cd react-hook-app && npm install
+```
 
-### Who do I talk to?
+### Executing program
 
-- Repo owner or admin
-- Other community or team contact
+```
+npm start
+```
+
+Preview of the main screen:
+
+<img width="350" src="assets/MainPreview.png" alt="Preview of the main screen" />
+
+### Running tests
+
+```
+npm test
+```
+
+Preview of the console after running the tests:
+
+<img width="350" src="assets/TestsPreview.png" alt="Preview of the console after running the tests" />
+
+## Authors
+
+- [Felipe Navas](https://www.linkedin.com/in/felipenavaslederhos) - [Email](mailto:felipenavas.itec@gmail.com?subject=[GitHub]%react-hook-app)
+
+## Contributing
+
+1. Fork it (<https://github.com/Felipe-Navas/react-hook-app/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
+## License
+
+This project is licensed under the [MIT License] - see the LICENSE file for details

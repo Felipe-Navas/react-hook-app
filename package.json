@@ -1,7 +1,18 @@
 {
   "name": "react-hook-app",
-  "version": "0.1.0",
-  "private": true,
+  "homepage": "https://Felipe-Navas.github.io/react-hook-app",
+  "version": "1.0.0",
+  "description": "A React app for test the hooks",
+  "main": "/src/index.js",
+  "author": "Felipe Navas",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Felipe-Navas/react-hook-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Felipe-Navas/react-hook-app/issues"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
@@ -40,6 +51,7 @@
     "@testing-library/react-hooks": "^7.0.2",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "enzyme": "^3.11.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2"
   }
