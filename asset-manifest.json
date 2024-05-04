@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/react-hook-app/static/js/main.75ccedee.js",
+    "index.html": "/react-hook-app/index.html",
+    "main.75ccedee.js.map": "/react-hook-app/static/js/main.75ccedee.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.75ccedee.js"
+  ]
+}
