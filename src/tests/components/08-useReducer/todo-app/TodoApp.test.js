@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, shallow, configure } from 'enzyme';
-import { act } from '@testing-library/react-hooks';
+// import { act } from '@testing-library/react-hooks';
+import {act} from 'react-dom/test-utils';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { TodoApp } from '../../../../components/08-useReducer/todo-app/TodoApp';
 import { demoTodos } from '../../../fixtures/demoTodo';

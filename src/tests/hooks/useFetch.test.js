@@ -4,7 +4,7 @@ import { useFetch } from '../../hooks/useFetch';
 describe('Testing the custom hook useFetch', () => {
   test('should return the default data', () => {
     const { result } = renderHook(() =>
-      useFetch('https://www.breakingbadapi.com/api/quotes/1')
+      useFetch('https://reqres.in/api/users?page=2')
     );
 
     const { data, loading, error } = result.current;
@@ -15,11 +15,12 @@ describe('Testing the custom hook useFetch', () => {
 
   test('should return the correct data, loading and error from the URL', async () => {
     const { result, waitForNextUpdate } = renderHook(() =>
-      useFetch('https://www.breakingbadapi.com/api/quotes/1')
+      useFetch('https://reqres.in/api/users?page=2')
     );
     await waitForNextUpdate({ timeout: 5000 });
+    console.log(result.current)
     const { data, loading, error } = result.current;
-    expect(data.length).toBe(1);
+    expect(data.data.length).toBeGreaterThan(0);
     expect(loading).toBe(false);
     expect(error).toBe(null);
   });
